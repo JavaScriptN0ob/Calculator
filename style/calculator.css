@@ -62,6 +62,7 @@
     text-align: center;
     line-height: 150px;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 .clock, .zero {
