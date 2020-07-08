@@ -68,14 +68,17 @@ equal.addEventListener('click', () => {
     if(operatorPlusPosition>1){
         let number2 = parseInt(input.value.slice(operatorPlusPosition+1));
         result.value = number1 + number2;
+        input.value = "0";
     }
     else if (operatorMinusPosition>1) {
         let number2 = parseInt(input.value.slice(operatorMinusPosition+1));
         result.value = number1 - number2;
+        input.value = "0";
     }
     else if (operatorMulPosition>1) {
         let number2 = parseInt(input.value.slice(operatorMulPosition+1));
         result.value = number1 * number2;
+        input.value = "0";
     }
     else if(operatorDivPosition>1) {
         let number2 = parseInt(input.value.slice(operatorDivPosition+1));
