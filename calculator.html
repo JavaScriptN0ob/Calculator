@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator By Wenpei Z</title>
+    <link rel="stylesheet" href="./style/calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <div class="calculator">
+            <div class="calculator__screen_wrapper">
+                <input type="text" class="calculator__screen-review" placeholder="0"/>
+                <input type="number" class="calculator__screen-result">
+            </div>
+            <div class="calculator__buttons">
+                <div class="clear">C</div>
+                <div class="clock"><i class="fas fa-clock"></i><p class="clock__description">← press C to quit clock</p></div>
+                <div class="divide">÷</div>
+                <div class="seven">7</div>
+                <div class="eight">8</div>
+                <div class="nine">9</div>
+                <div class="multiple">x</div>
+                <div class="four">4</div>
+                <div class="five">5</div>
+                <div class="six">6</div>
+                <div class="minus">-</div>
+                <div class="one">1</div>
+                <div class="two">2</div>
+                <div class="three">3</div>
+                <div class="plus">+</div>
+                <div class="zero">0</div>
+                <div class="dot">.</div>
+                <div class="equal">=</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="author">
+            <marquee 
+              direction="left" 
+              behavior="alternate" 
+              scrollamount="4"
+              onmouseover="this.stop()"
+              onmouseout="this.start()"
+              >
+              <p>Author: <span class="authorName">Wenpei Z</span></p>
+              <p>Email: <span class="authorEmail">wenpeijs@gmail.com</span>
+                <a href=mailto:wenpeijs@gamil.com>Email WenpeiZ</a>
+              </p>
+            </marquee>
+        </div>
+        <script src="js/calculator.js"></script></footer>
+</body>
+</html>

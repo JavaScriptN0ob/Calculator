@@ -1,0 +1,139 @@
+/* * {
+    box-sizing: content-box;
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.calculator {
+    border: 4px solid black;
+    border-radius: 30px;
+    width: 810px;
+    height: 1160px;
+}
+
+.calculator__screen {
+    width: 800px;
+    height: 300px;
+    /* border: 1px solid green; */
+    font-size: 5rem;
+    background-color: darkslategrey;
+}
+
+.calculator__screen-review {
+    height: 145px;
+    width: 800px;
+    font-size: 5rem;
+    margin-top: 5px;
+    border-radius: 20px;
+}
+
+.calculator__screen-result {
+    height: 145px;
+    width: 800px;
+    font-size: 5rem;
+    text-align: right;
+    border-radius: 20px;
+}
+
+.calculator__buttons {
+    width: 800px;
+    height: 850px;
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 3px solid gray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.calculator__buttons > div {
+    width: 190px;
+    height: 160px;
+    background-color: gray;
+    color: white;
+    border: 5px solid white;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+}
+
+.clock, .zero {
+    width: 390px !important;
+}
+
+.clear {
+    background-color: tomato !important;
+}
+
+.clock, .equal {
+    background-color: skyblue !important;
+    position: relative;
+}
+
+.divide, .multiple, .minus, .plus {
+    background-color: rgb(255, 218, 53) !important;
+}
+
+.clock__description {
+    margin-top: 1px;
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    /* border: 1px solid salmon; */
+    height: 0;
+    font-size: 1.5rem;
+}
+
+.author {
+    margin-top: 40px;
+    padding: 0px 100px;
+  }
+  
+  .authorName, .authorEmail {
+    color: #ff7070;
+    margin-left: 20px;
+  }
+  
+  .authorName:hover::after {
+    content: "if your mouse stop here mean you like my project";
+    margin-left: 20px;
+    color: pink;
+    border-top-color: lightgreen;
+    border-right-color: red;
+    border-bottom-color: burlywood;
+    border-left-color: purple;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  marquee > p > a {
+    margin-left: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid transparent;
+    background-color: #007cc2;
+    padding: 5px 15px;
+    border-radius: 20px;
+  }
+  
+  a:hover {
+    background-color: #005485;
+  }
