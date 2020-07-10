@@ -96,4 +96,4 @@ document.querySelectorAll('div').forEach((element) => {
 });
     
 
-document.querySelector('.container').style.zoom = `${document.body.clientWidth /1000 * 0.4}`;
+document.querySelector('.container').style.zoom = `${document.body.clientWidth /1000 * 0.3}`;
