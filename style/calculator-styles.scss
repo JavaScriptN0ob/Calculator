@@ -12,9 +12,9 @@ $number-color: #2f4f4f;
 
 @mixin border-radius($radius) {
   border-radius: $radius;
--ms-border-radius: $radius;
--moz-border-radius: $radius;
--webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
 }
 
 %width-small {
@@ -32,7 +32,7 @@ $number-color: #2f4f4f;
 }
 
 .calculator {
-  width: 70%;
+  width: 40%;
   @extend %flex;
 }
 
@@ -69,5 +69,7 @@ $number-color: #2f4f4f;
   .operator {
     background-color: $operator-color;
   }
+  .clear {
+    background-color: $clear-color;
+  }
 }
-
