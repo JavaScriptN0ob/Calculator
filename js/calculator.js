@@ -1,44 +1,35 @@
 let clear = document.querySelector('.clear');
 let clock = document.querySelector('.clock');
-let divide = document.querySelector('.divide');
-let seven = document.querySelector('.seven');
-let eight = document.querySelector('.eight');
-let nine = document.querySelector('.nine');
-let multiple = document.querySelector('.multiple');
-let four = document.querySelector('.four');
-let five = document.querySelector('.five');
-let six = document.querySelector('.six');
-let minus = document.querySelector('.minus');
-let one = document.querySelector('.one');
-let two = document.querySelector('.two');
-let three = document.querySelector('.three');
-let plus = document.querySelector('.plus');
-let zero = document.querySelector('.zero');
 let dot = document.querySelector('.dot');
 let equal = document.querySelector('.equal');
 let input = document.querySelector('.calculator__screen-review');
 let result = document.querySelector('.calculator__screen-result');
 
-one.addEventListener('click', () => {input.value += '1'});
-two.addEventListener('click', () => {input.value += '2'});
-three.addEventListener('click', () => {input.value += '3'});
-four.addEventListener('click', () => {input.value += '4'});
-five.addEventListener('click', () => {input.value += '5'});
-six.addEventListener('click', () => {input.value += '6'});
-seven.addEventListener('click', () => {input.value += '7'});
-eight.addEventListener('click', () => {input.value += '8'});
-nine.addEventListener('click', () => {input.value += '9'});
-zero.addEventListener('click', () => {input.value += '0'});
-plus.addEventListener('click', () => {input.value += '+'});
-minus.addEventListener('click', () => {input.value += '-'});
-multiple.addEventListener('click', () => {input.value += 'x'});
-divide.addEventListener('click', () => {input.value += '/'});
+let number = document.querySelectorAll('.number').forEach((element) => {
+    element.addEventListener('click', () => {
+        input.value += `${element.innerText}`;
+    })
+})
+
+let operator = document.querySelectorAll('.operator').forEach((element) => {
+    element.addEventListener('click', () => {
+        input.value += `${element.innerText}`;
+    })
+})
+
+
+dot.addEventListener('click', () => {
+    if(input.value.indexOf('.') == '-1') {
+        input.value += '.';
+    }
+});
+
 clear.addEventListener('click', () => {
     input.value = '0';
     result.value = '0';
     clearInterval(timer);
 });
-dot.addEventListener('click', () => {input.value += '.'});
+
 
 function time() {
     input.value = new Date().toLocaleTimeString();
@@ -50,10 +41,8 @@ clock.addEventListener('click', () => {
     }, 1000);
 });
 
-
-
 equal.addEventListener('click', () => {
-    var number1 = parseInt(input.value.slice(0, input.value.length-1));
+    var number1 = parseFloat(input.value.slice(0, input.value.length-1));
     var operator = input.value.charAt(input.value.length);
     console.log(`first number is ${number1}`);
     console.log(`operator is ${operator}`);
@@ -66,27 +55,61 @@ equal.addEventListener('click', () => {
     // console.log(operatorMulPosition);
     // console.log(operatorDivPosition);
     if(operatorPlusPosition>1){
-        let number2 = parseInt(input.value.slice(operatorPlusPosition+1));
+        let number2 = parseFloat(input.value.slice(operatorPlusPosition+1));
         result.value = number1 + number2;
         input.value = "0";
     }
     else if (operatorMinusPosition>1) {
-        let number2 = parseInt(input.value.slice(operatorMinusPosition+1));
+        let number2 = parseFloat(input.value.slice(operatorMinusPosition+1));
         result.value = number1 - number2;
         input.value = "0";
     }
     else if (operatorMulPosition>1) {
-        let number2 = parseInt(input.value.slice(operatorMulPosition+1));
+        let number2 = parseFloat(input.value.slice(operatorMulPosition+1));
         result.value = number1 * number2;
         input.value = "0";
     }
     else if(operatorDivPosition>1) {
-        let number2 = parseInt(input.value.slice(operatorDivPosition+1));
+        let number2 = parseFloat(input.value.slice(operatorDivPosition+1));
         result.value = number1 / number2
     } else {
         result.value = input.value;
     }
 })
+
+// function clearFirstZero() {
+//     var zeroPos = input.value;
+//     if(zeroPos.length>=2 && zeroPos.charAt(0) === '0') {
+//         if(zeroPos.charAt(1) !== '.') {
+//             zeroPos = zeroPos.replace(0, '');
+//         }
+//     }
+// }
+
+function clearFirstZero() {
+    // var zeroPos = input.value;
+    if(input.value.length>=2 && input.value.charAt(0) === '0') {
+        if(input.value.charAt(1) !== '.') {
+            input.value = input.value.replace(0, '');
+        }
+    }
+}
+
+
+
+document.querySelectorAll('div').forEach((element) => {
+    element.addEventListener('mouseleave', ()=> {
+        clearFirstZero();
+        // console.log('mouse left');
+    });
+    element.addEventListener('mouseenter', ()=> {
+        clearFirstZero();
+        // console.log('mouse in');
+    });
+});
+    
+
+
 
 
 document.querySelector('.container').style.zoom = `${document.body.clientWidth /1000 * 0.4}`;
